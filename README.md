@@ -454,9 +454,7 @@ fi
 
 如果不考虑兼容 posix sh 和 dash 这些的话，可用 bash 独有的 ((..)) 和 [[..]]:
 
-```bash
-https://www.ibm.com/developerworks/library/l-bash-test/index.html
-```
+[Bash test and comparison functions](https://www.ibm.com/developerworks/library/l-bash-test/index.html)
 
 
 
@@ -1038,6 +1036,7 @@ CTRL+X CTRL+E       # 用你指定的编辑器，编辑当前命令
 
 ## 参考信息
 
+- https://github.com/skywind3000/awesome-cheatsheets/blob/master/languages/bash.sh
 - https://github.com/Idnan/bash-guide
 - http://www.linuxstall.com/linux-command-line-tips-that-every-linux-user-should-know/
 - https://ss64.com/bash/syntax-keyboard.html
