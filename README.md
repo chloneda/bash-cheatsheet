@@ -325,9 +325,7 @@ num=$((1 + (2 + 3) * 2))  # 复杂计算
 
 
 
-## 函数
-
-# 定义一个新函数
+## 定义新函数
 
 ```bash
 function myfunc() {
@@ -1038,7 +1036,7 @@ ALT+hjkl/HJKL 快速移动光标，将下面内容添加到 ~/.inputrc 中可作
 ```
 
 
-# 参考信息
+## 参考信息
 
 - https://github.com/Idnan/bash-guide
 - http://www.linuxstall.com/linux-command-line-tips-that-every-linux-user-should-know/
