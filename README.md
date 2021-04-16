@@ -1,4 +1,3 @@
-
 # Bash 命令速查表
 
 
@@ -7,7 +6,7 @@
 ```bash
 exit                # 退出当前登陆
 env                 # 显示环境变量
-echo $SHELL         # 显示你在使用什么 SHELL
+echo $SHELL         # 显示你在使用什么 Shell
 bash                # 使用 bash，用 exit 返回
 which bash          # 搜索 $PATH，查找哪个程序对应命令 bash
 whereis bash        # 搜索可执行，头文件和帮助信息的位置，使用系统内建数据库
@@ -30,7 +29,7 @@ pushd {dirname}     # 目录压栈并进入新目录
 popd                # 弹出并进入栈顶的目录
 dirs -v             # 列出当前目录栈
 cd -                # 回到之前的目录
-cd -{N}             # 切换到目录栈中的第 N个目录，比如 cd -2 将切换到第二个
+cd -{N}             # 切换到目录栈中的第 N 个目录，比如 cd -2 将切换到第二个
 ```
 
 
@@ -55,7 +54,7 @@ head {fn}           # 显示文件头部数行，可用 head -3 abc.txt 显示�
 tail {fn}           # 显示文件尾部数行，可用 tail -3 abc.txt 显示尾部三行
 tail -f {fn}        # 持续显示文件尾部数据，可用于监控日志
 nano {fn}           # 使用 nano 编辑器编辑文件
-vim {fn}            # 使用 vim 编辑文件
+vim {fn}            # 使用 Vim 编辑器编辑文件
 diff {f1} {f2}      # 比较两个文件的内容
 wc {fn}             # 统计文件有多少行，多少个单词
 chmod 644 {fn}      # 修改文件权限为 644，可以接 -R 对目录循环改权限
@@ -126,7 +125,7 @@ killall {procname}        # 按名称结束所有进程
 pkill {procname}          # 按名称结束进程，除名称外还可以有其他参数
 top                       # 查看最活跃的进程
 top -u {user}             # 查看某用户最活跃的进程
-any_command &             # 在后台运行某命令，也可用 CTRL+Z 将当前进程挂到后台
+any_command &             # 在后台运行某命令，也可用 Ctrl+Z 将当前进程挂到后台
 jobs                      # 查看所有后台进程（jobs）
 bg                        # 查看后台进程，并切换过去
 fg                        # 切换后台进程到前台
@@ -161,14 +160,14 @@ uptime                    # 查看系统启动时间
 date                      # 显示日期
 cal                       # 显示日历
 vmstat                    # 显示内存和 CPU 使用情况
-vmstat 10                 # 每 10 秒打印一行内存和 CPU情况，CTRL+C 退出
+vmstat 10                 # 每 10 秒打印一行内存和 CPU情况，Ctrl+C 退出
 free                      # 显示内存和交换区使用情况
 df                        # 显示磁盘使用情况
 du                        # 显示当前目录占用，du . --max-depth=2 可以指定深度
 uname                     # 显示系统版本号
 hostname                  # 显示主机名称
 showkey -a                # 查看终端发送的按键编码
-ping {host}               # ping 远程主机并显示结果，CTRL+C 退出
+ping {host}               # ping 远程主机并显示结果，Ctrl+C 退出
 ping -c N {host}          # ping 远程主机 N 次
 traceroute {host}         # 侦测路由连通情况
 mtr {host}                # 高级版本 traceroute
@@ -202,7 +201,7 @@ rz                        # 接收终端发送过来的文件
 varname=value             # 定义变量
 varname=value command     # 定义子进程变量并执行子进程
 echo $varname             # 查看变量内容
-echo $$                   # 查看当前 shell 的进程号
+echo $$                   # 查看当前 Shell 的进程号
 echo $!                   # 查看最近调用的后台任务进程号
 echo $?                   # 查看最近一条命令的返回码
 export VARNAME=value      # 设置环境变量（将会影响到子进程）
@@ -276,14 +275,14 @@ num=$((1 + (2 + 3) * 2))  # 复杂计算
 ```bash
 !!                  # 上一条命令
 !^                  # 上一条命令的第一个单词
-!:n                 # 上一条命令的第n个单词
-!:n-$               # 上一条命令的第n个单词到最后一个单词
+!:n                 # 上一条命令的第 n 个单词
+!:n-$               # 上一条命令的第 n 个单词到最后一个单词
 !$                  # 上一条命令的最后一个单词
 !-n:$               # 上n条命令的最后一个单词
-!string             # 最近一条包含string的命令
-!^string1^string2   # 最近一条包含string1的命令, 快速替换string1为string2
+!string             # 最近一条包含 string 的命令
+!^string1^string2   # 最近一条包含 string1 的命令, 快速替换 string1 为 string2
 !#                  # 本条命令之前所有的输入内容
-!#:n                # 本条命令之前的第n个单词, 快速备份cp /etc/passwd !#:1.bak
+!#:n                # 本条命令之前的第 n 个单词, 快速备份 cp /etc/passwd !#:1.bak
 ```
 
 
@@ -335,7 +334,7 @@ str2 > str2               # 字符串大于，注意 < 或 > 是字面量，输�
 -e file                   # 判断文件存在，和 -a 等价
 -f file                   # 判断文件存在，且该文件是一个普通文件（非目录等）
 -r file                   # 判断文件存在，且可读
--s file                   # 判断文件存在，且尺寸大于0
+-s file                   # 判断文件存在，且尺寸大于 0
 -w file                   # 判断文件存在，且可写
 -x file                   # 判断文件存在，且执行
 -N file                   # 文件上次修改过后还没有读取过
@@ -358,7 +357,7 @@ num1 -ge num2             # 数字判断：num1 >= num2
 分支控制：if 和经典 test，兼容 posix sh 的条件判断语句.
 
 ```bash
-test {expression}         # 判断条件为真的话 test 程序返回0 否则非零
+test {expression}         # 判断条件为真的话 test 程序返回 0 否则非零
 [ expression ]            # 判断条件为真的话返回0 否则非零
 
 test "abc" = "def"        # 查看返回值 echo $? 显示 1，因为条件为假
@@ -572,8 +571,8 @@ n>| file                           # 强制将文件描述符 n的输出重定�
 n<> file                           # 同时使用文件作为文件描述符 n 的输出和输入
 n> file                            # 重定向文件描述符 n 的输出到文件
 n< file                            # 重定向文件描述符 n 的输入为文件内容
-n>&                                # 将标准输出 dup/合并 到文件描述符 n
-n<&                                # 将标准输入 dump/合并 定向为描述符 n
+n>&                                # 将标准输出 dup/ 合并 到文件描述符 n
+n<&                                # 将标准输入 dump/ 合并 定向为描述符 n
 n>&m                               # 文件描述符 n 被作为描述符 m 的副本，输出用
 n<&m                               # 文件描述符 n 被作为描述符 m 的副本，输入用
 &>file                             # 将标准输出和标准错误重定向到文件
@@ -589,8 +588,8 @@ diff <(cmd1) <(cmd2)               # 比较两个命令的输出
 ## 文本处理 - cut
 
 ```bash
-cut -c 1-16                        # 截取每行头16个字符
-cut -c 1-16 file                   # 截取指定文件中每行头 16个字符
+cut -c 1-16                        # 截取每行头 16 个字符
+cut -c 1-16 file                   # 截取指定文件中每行头 16 个字符
 cut -c3-                           # 截取每行从第三个字符开始到行末的内容
 cut -d':' -f5                      # 截取用冒号分隔的第五列内容
 cut -d';' -f2,10                   # 截取用分号分隔的第二和第十列内容
@@ -662,15 +661,15 @@ z -t foo                           # 按照最近访问优先进行匹配跳转
 ## 键盘绑定
 
 ```bash
-bind '"\eh":"\C-b"'                # 绑定 ALT+h 为光标左移，同 CTRL+b / <Left>
-bind '"\el":"\C-f"'                # 绑定 ALT+l 为光标右移，同 CTRL+f / <Right>
-bind '"\ej":"\C-n"'                # 绑定 ALT+j 为下条历史，同 CTRL+n / <Down>
-bind '"\ek":"\C-p"'                # 绑定 ALT+k 为上条历史，同 CTRL+p / <Up>
-bind '"\eH":"\eb"'                 # 绑定 ALT+H 为光标左移一个单词，同 ALT-b 
-bind '"\eL":"\ef"'                 # 绑定 ALT+L 为光标右移一个单词，同 ALT-f 
-bind '"\eJ":"\C-a"'                # 绑定 ALT+J 为移动到行首，同 CTRL+a / <Home>
-bind '"\eK":"\C-e"'                # 绑定 ALT+K 为移动到行末，同 CTRL+e / <End>
-bind '"\e;":"ls -l\n"'             # 绑定 ALT+; 为执行 ls -l 命令
+bind '"\eh":"\C-b"'                # 绑定 Alt+h 为光标左移，同 Ctrl+b / <Left>
+bind '"\el":"\C-f"'                # 绑定 Alt+l 为光标右移，同 Ctrl+f / <Right>
+bind '"\ej":"\C-n"'                # 绑定 Alt+j 为下条历史，同 Ctrl+n / <Down>
+bind '"\ek":"\C-p"'                # 绑定 Alt+k 为上条历史，同 Ctrl+p / <Up>
+bind '"\eH":"\eb"'                 # 绑定 Alt+H 为光标左移一个单词，同 Alt-b 
+bind '"\eL":"\ef"'                 # 绑定 Alt+L 为光标右移一个单词，同 Alt-f 
+bind '"\eJ":"\C-a"'                # 绑定 Alt+J 为移动到行首，同 Ctrl+a / <Home>
+bind '"\eK":"\C-e"'                # 绑定 Alt+K 为移动到行末，同 Ctrl+e / <End>
+bind '"\e;":"ls -l\n"'             # 绑定 Alt+; 为执行 ls -l 命令
 ```
 
 
@@ -714,7 +713,7 @@ nmap -O -sV 10.0.0.12              # 探测主机服务和操作系统版本
 ```bash
 man hier                           # 查看文件系统的结构和含义
 man test                           # 查看 posix sh 的条件判断帮助
-man ascii                          # 显示 ascii 表
+man ascii                          # 显示 ASCII 表
 getconf LONG_BIT                   # 查看系统是 32 位还是 64 位
 bind -P                            # 列出所有 bash 的快捷键
 mount | column -t                  # 漂亮的列出当前加载的文件系统
@@ -725,14 +724,14 @@ lsof -i port:80                    # 哪个程序在使用 80 端口？
 showkey -a                         # 取得按键的 ASCII 码
 svn diff | view -                  # 使用 Vim 来显示带色彩的 diff 输出
 mv filename.{old,new}              # 快速文件改名
-time read                          # 使用 CTRL-D 停止，最简单的计时功能
+time read                          # 使用 Ctrl-D 停止，最简单的计时功能
 cp file.txt{,.bak}                 # 快速备份文件
 sudo touch /forcefsck              # 强制在下次重启时扫描磁盘
 find ~ -mmin 60 -type f            # 查找 $HOME 目录中，60 分钟内修改过的文件
 curl wttr.in/~beijing              # 查看北京的天气预报
 echo ${SSH_CLIENT%% *}             # 取得你是从什么 IP 链接到当前主机上的
 echo $[RANDOM%X+1]                 # 取得 1 到 X 之间的随机数
-bind -x '"\C-l":ls -l'             # 设置 CTRL+l 为执行 ls -l 命令
+bind -x '"\C-l":ls -l'             # 设置 Ctrl+l 为执行 ls -l 命令
 find / -type f -size +5M           # 查找大于 5M 的文件
 chmod --reference f1 f2            # 将 f2 的权限设置成 f1 一模一样的
 curl -L cheat.sh                   # 速查表大全
@@ -848,7 +847,7 @@ Vim 中保存一个没有权限的文件
 ```
 
 
-在 .bashrc / .bash_profile 中加载另外一个文件（比如你保存在 github 上的配置）
+在 .bashrc / .bash_profile 中加载另外一个文件（比如你保存在 Github 上的配置）
 
 ```bash
 source ~/github/profiles/my_bash_init.sh
@@ -878,7 +877,7 @@ ssh -CqTnN -D localhost:1080  user@202.115.8.1
 ```
 
 
-终端下正确设置 ALT 键和 BackSpace 键
+终端下正确设置 Alt 键和 Backspace 键
 
 ```bash
 http://www.skywind.me/blog/archives/2021
@@ -983,7 +982,7 @@ export LESS_TERMCAP_so=$'\E[1m\E[33m\E[44m'
 
 
 
-ALT+hjkl/HJKL 快速移动光标，将下面内容添加到 ~/.inputrc 中可作用所有工具，包括 bash/zsh/python/lua 等使用 readline 的工具，帮助见：info rluserman。
+Alt+hjkl/HJKL 快速移动光标，将下面内容添加到 ~/.inputrc 中可作用所有工具，包括 bash/zsh/python/lua 等使用 readline 的工具，帮助见：info rluserman。
 
 ```bash
 "\eh": backward-char
@@ -1000,36 +999,36 @@ ALT+hjkl/HJKL 快速移动光标，将下面内容添加到 ~/.inputrc 中可作
 ## Bash 快捷键
 
 ```bash
-CTRL+A              # 移动到行首，同 <Home>
-CTRL+B              # 向后移动，同 <Left>
-CTRL+C              # 结束当前命令
-CTRL+D              # 删除光标前的字符，同 <Delete> ，或者没有内容时，退出会话
-CTRL+E              # 移动到行末，同 <End>
-CTRL+F              # 向前移动，同 <Right>
-CTRL+G              # 退出当前编辑（比如正在 CTRL+R 搜索历史时）
-CTRL+H              # 删除光标左边的字符，同 <Backspace>
-CTRL+K              # 删除光标位置到行末的内容
-CTRL+L              # 清屏并重新显示
-CTRL+N              # 移动到命令历史的下一行，同 <Down>
-CTRL+O              # 类似回车，但是会显示下一行历史
-CTRL+P              # 移动到命令历史的上一行，同 <Up>
-CTRL+R              # 历史命令反向搜索，使用 CTRL+G 退出搜索
-CTRL+S              # 历史命令正向搜索，使用 CTRL+G 退出搜索
-CTRL+T              # 交换前后两个字符
-CTRL+U              # 删除字符到行首
-CTRL+V              # 输入字符字面量，先按 CTRL+V 再按任意键
-CTRL+W              # 删除光标左边的一个单词
-CTRL+X              # 列出可能的补全
-CTRL+Y              # 粘贴前面 CTRL+u/k/w 删除过的内容
-CTRL+Z              # 暂停前台进程返回 bash，需要时可用 fg 将其切换回前台
-CTRL+_              # 撤销（undo），有的终端将 CTRL+_ 映射为 CTRL+/ 或 CTRL+7
-ALT+b               # 向后（左边）移动一个单词
-ALT+d               # 删除光标后（右边）一个单词
-ALT+f               # 向前（右边）移动一个单词
-ALT+t               # 交换字符
-ALT+BACKSPACE       # 删除光标前面一个单词，类似 CTRL+W，但不影响剪贴板
-CTRL+X CTRL+X       # 连续按两次 CTRL+X，光标在当前位置和行首来回跳转 
-CTRL+X CTRL+E       # 用你指定的编辑器，编辑当前命令
+Ctrl+A              # 移动到行首，同 <Home>
+Ctrl+B              # 向后移动，同 <Left>
+Ctrl+C              # 结束当前命令
+Ctrl+D              # 删除光标前的字符，同 <Delete> ，或者没有内容时，退出会话
+Ctrl+E              # 移动到行末，同 <End>
+Ctrl+F              # 向前移动，同 <Right>
+Ctrl+G              # 退出当前编辑（比如正在 Ctrl+R 搜索历史时）
+Ctrl+H              # 删除光标左边的字符，同 <Backspace>
+Ctrl+K              # 删除光标位置到行末的内容
+Ctrl+L              # 清屏并重新显示
+Ctrl+N              # 移动到命令历史的下一行，同 <Down>
+Ctrl+O              # 类似回车，但是会显示下一行历史
+Ctrl+P              # 移动到命令历史的上一行，同 <Up>
+Ctrl+R              # 历史命令反向搜索，使用 Ctrl+G 退出搜索
+Ctrl+S              # 历史命令正向搜索，使用 Ctrl+G 退出搜索
+Ctrl+T              # 交换前后两个字符
+Ctrl+U              # 删除字符到行首
+Ctrl+V              # 输入字符字面量，先按 Ctrl+V 再按任意键
+Ctrl+W              # 删除光标左边的一个单词
+Ctrl+X              # 列出可能的补全
+Ctrl+Y              # 粘贴前面 Ctrl+u/k/w 删除过的内容
+Ctrl+Z              # 暂停前台进程返回 bash，需要时可用 fg 将其切换回前台
+Ctrl+_              # 撤销（undo），有的终端将 Ctrl+_ 映射为 Ctrl+/ 或 Ctrl+7
+Alt+b               # 向后（左边）移动一个单词
+Alt+d               # 删除光标后（右边）一个单词
+Alt+f               # 向前（右边）移动一个单词
+Alt+t               # 交换字符
+Alt+BACKSPACE       # 删除光标前面一个单词，类似 Ctrl+W，但不影响剪贴板
+Ctrl+X Ctrl+X       # 连续按两次 Ctrl+X，光标在当前位置和行首来回跳转 
+Ctrl+X Ctrl+E       # 用你指定的编辑器，编辑当前命令
 ```
 
 
